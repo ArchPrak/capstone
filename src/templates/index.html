@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block header %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css')}}">
+{% endblock header %}
+{% block title %}
+	Home
+{% endblock title %}
+{% block content %}
+    <div id="loading"><img src="../static/images/loader.gif"></img></div>
+    <section id="banner">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <p class="promo-title">Domain Specific Program Synthesis</p>
+                    <div class="about-section">
+                        <p class="promo-section">
+                            This tool uses Natural Language Processing and Machine Learning
+                            techniques to solve a propositional logic word problem.
+                            It takes facts and questions as input, and determines the results.
+                        <p>
+                            For eg. ,
+                            Facts: If it rains today, I will take an umbrella. <br>
+                              I did not take an umbrella today. <br>
+                            Question: Did it rain today? <br>
+                            Result: Did it rain? False. <br>
+                        </p>
+                        <p>
+                            The tool is also capable of handling 'Wh' questions:
+                            Who, Where, and What <br>
+                        </p>
+                        <p>
+                            E.g.
+                            Facts: If John and Susan go to school, Jack will go home.
+                              Susan went to school and Jack did not go home. <br>
+                            Question: Did John go to school? Who went to school? <br>
+                            Result: Did John go to school? False<br>
+                              Who went to school? Susan
+                        </p>
+                        <p>
+                            <b>
+                                Check out the tool to get started!
+                            </b>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <div class="myform-container">
+                        <div class="myform-title" style="background-image: url('../static/images/bg.jpg');">
+                          <span>Domain Specific Program Synthesis</span>
+                        </div>
+                        <form class="myform needs-validation" id = "upload_facts" method = "POST" novalidate>
+                            <div class="myinput form-group">
+                                <label>Facts</label>
+                                <textarea class="form-control" name="insert_facts" rows="4" required></textarea>
+                                <div class="invalid-feedback">
+                                    Facts cannot be empty
+                                </div>
+                            </div>
+
+                            <div class="myinput form-group">
+                                <label>Enter questions</label>
+                                <textarea class="form-control" name="insert_questions" rows="4" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter atleast one question
+                                </div>
+                            </div>
+
+                            <input class = "myform-btn" type = "submit" name = "Solve" value = "Solve" onclick="loading();">
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+	<script>
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+	</script>
+
+    <script type="text/javascript">
+    function loading(){
+        document.getElementById("loading").style.display = "block";
+    }
+    </script>
+{% endblock content %}
