@@ -1,3 +1,23 @@
+This is a parsing tool developed with syntax agnostic learning techniques, capable of parsing and evaluating a natural language query to return a boolean result. This was implemetned as a part of a capstone research project in the final year of college in 2020. 
+
+## Context
+Program Synthesis refers to the task of constructing a program in a specific programming language, given its intent in a particular format. This emerging field can be applied in diverse domains and is currently being investigated with different techniques. A program synthesizer would simplify the efforts of programmers and help them focus on the program's core logic, without worrying about language syntax and other domain specifics. We applied the concepts of program synthesis in the context of solving a propositional logic word problem. We have developed a tool that is capable of understanding, parsing and evaluating a propositional logic word problem. With the user's natural language input, this tool processes the query and evaluates truth values of the question expressions. The working of the tool can be explained in three major phases: natural language processing, machine learning to obtain postfix notations of the Boolean expressions involved, and further evaluation of the postfix notations to determine the answers. Our goal was to explore the domain agnostic capabilities of our program-synthesis-based techniques of learning used in the implementation of this tool.
+
+### Publication Details
+Paper: [Domain Specific Program Synthesis](https://ieeexplore.ieee.org/document/9544738) <br />
+Published in: 2021 Asian Conference on Innovation in Technology (ASIANCON) <br />
+Publisher: IEEE<br />
+Conference Location: PUNE, India<br />
+Date of Conference: 27-29 August 2021<br />
+Date Added to IEEE Xplore: 04 October 2021<br />
+
+#### Authors:
+* **Archana P** - [GitHub](https://github.com/ArchPrak) - [Email](mailto:arch.2421@gmail.com)
+* **Harish PB**  - [GitHub](https://github.com/harishpb26) - [Email](mailto:harishpb.26@gmail.com)
+* **Navneetha Rajan** - [GitHub](https://github.com/navneetha08) - [Email](mailto:navneetha.rajan1999@gmail.com)
+* **Sparsha P** - [GitHub](https://github.com/sparsha-p) - [Email](mailto:sparshaprashanth3@gmail.com)
+
+
 ## Installation Manual
 * Clone the repository ` $ git clone https://github.com/ArchPrak/capstone/`
 * Install virtualenv package
@@ -26,22 +46,3 @@
 * Insert query description in case of the SQL domain
 * SQL query and rows of the database displayed in form of table
 
-### Integration and deployment
-Flask has been used to integrate and deploy our app as a client-server architecture. Flask is a popular
-micro web framework in Python that uses REST API’s to communicate via HTTP. REST stands for
-Representational State Transfer that defines a set of rules for an application to exchange data. REST is
-stateless, cacheable and provides a uniform interface between the components. Flask implements REST
-by default.
-The benepar module used in the pre-processing supports Tensorflow 1.x while the encoder-decoder
-model runs on Tensorflow 2.x. We use virtual environments to overcome this issue since different
-versions of Tensorflow are required to achieve various tasks. A virtual environment is a copy of the
-Python interpreter that creates an isolated environment. To solve this problem, we have created two
-virtual environments. One to run the Flask app, pre-process the query and evaluate the questions and
-the other to train the model and predict.
-The qa function uses GET request to render the index page that contains a form to accept the user’s
-facts and questions. On the other hand, the upload function uses POST request to retrieve the contents
-of the form, run different pre-processing and machine learning models and evaluate the questions then
-returns the rendered index page displaying the result. The sql function uses GET request to render the
-sql page that contains a form to accept the description of the user query. This function also uses POST
-request to retrieve the description, run different pre-processing and encoder-decoder models to obtain
-the SQL query that is run on the database and displayed onto the frontend.
