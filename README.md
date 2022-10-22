@@ -1,48 +1,32 @@
-Installation Manual
-• Clone the repository
+## Installation Manual
+* Clone the repository ` $ git clone https://github.com/ArchPrak/capstone/`
+* Install virtualenv package
+  * `$ cd capstone`
+  * `$ sudo apt-get install python-virtualenv`
+* Create a new virtual environment modelvenv `$ virtualenv -p python3 modelvenv`
+* Activate the environment `$ source modelvenv/bin/activate`
+* Install the model requirements `(modelvenv) $ pip install -r modelvenv-requirements.txt`
+* Deactivate the environment
+`(modelvenv) $ deactivate`
+* Create another virtual environment venv and activate the environment
+  * `$ virtualenv -p python3 venv`
+  * `$ source venv/bin/activate`
+* Install the requirements
+`(venv) $ pip install -r requirements.txt`
 
-$ git clone https://github.com/sparsha-p/Capstone1
-$ cd Capstone1
-• Install virtualenv package
+## User Manual
 
-$ sudo apt-get install python-virtualenv
-• Create a new virtual environment modelvenv
-$ virtualenv -p python3 modelvenv
+* Run the app
+`(venv) $ python src/app.py`
+* Open http://localhost:5000/ in your browser
+* Navigate to the Home page
+* Navigate to either to Boolean domain or SQL domain
+* Insert facts and questions and click Solve in case of the Boolean domain
+* Facts received and evaluated result is displayed
+* Insert query description in case of the SQL domain
+* SQL query and rows of the database displayed in form of table
 
-• Activate the environment
-
-$ source modelvenv/bin/activate
-• Install the model requirements
-
-(modelvenv) $ pip install -r modelvenv-requirements.txt
-
-• Deactivate the environment
-(modelvenv) $ deactivate
-
-• Create another virtual environment venv and activate the environment
-
-$ virtualenv -p python3 venv
-$ source venv/bin/activate
-• Install the requirements
-
-(venv) $ pip install -r requirements.txt
-
-• Run the app
-
-(venv) $ python src/app.py
-
-_____________________________________________________________________________________
-Dept. of CSE Jan - May, 2021 Page No. 42
-User Manual
-• Open http://localhost:5000/ in your browser
-• Navigate to the Home page
-• Navigate to either to Boolean domain or SQL domain
-• Insert facts and questions and click Solve in case of the Boolean domain
-• Facts received and evaluated result is displayed
-• Insert query description in case of the SQL domain
-• SQL query and rows of the database displayed in form of table
-
-Integration and deployment
+### Integration and deployment
 Flask has been used to integrate and deploy our app as a client-server architecture. Flask is a popular
 micro web framework in Python that uses REST API’s to communicate via HTTP. REST stands for
 Representational State Transfer that defines a set of rules for an application to exchange data. REST is
